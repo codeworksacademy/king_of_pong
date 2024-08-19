@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Getting Started | CodeWorks Precourse</title>
+  <script src="Test/main.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <!-- 🧩 This is an html comment. it will not show up in the Webview you can add and remove comments with (ctrl + /) or (cmd + /) -->
+
+  <!-- 🧩  You can comment / uncomment multiple lines by highlighting them and pressing (ctrl + /) or (cmd + /) -->
+
+  <h1>Your Card Collection <b id="cards-value">$0.00</b></h1>
+
+  <div id='thorsten' class="player-card thorsten-style clickable" onclick="collectThrosten()">
+    <h4 id="thorsten-count" class="card-count">0</h4>
+    <img src="images/ThorstenCard.png" alt="gorilla">
+    <h2>Thorsten</h2>
+    <p>Cameroon Challengers</p>
+    <p class="stats">🏆 8 | 🏓 12</p>
+    <label>⭐ rare</label>
+  </div>
+  <div id='georgie' class="player-card georgie-style clickable" onclick="collectGeorgie()">
+    <h4 id="georgie-count" class="card-count">0</h4>
+    <img src="images/GeorgieCard.png" alt="gorilla">
+    <h2>Georgie</h2>
+    <p>Rwanda Rampage</p>
+    <p class="stats">🏆 10 | 🏓 20</p>
+    <label>⭐ common</label>
+  </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
