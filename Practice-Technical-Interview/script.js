@@ -38,35 +38,3 @@ const players = [
 
 // ⌨️ YOUR CODE HERE
 
-let points = 10
-
-points += 12
-
-for (let i = 0; i < points; i++) {
-  if (i % 4 == 0) {
-    console.log(i, 'swap server')
-  } else {
-    console.log(i)
-  }
-  if(i == 21){
-    console.log('good MatCH')
-  }
-}
-
-console.log(`${tournament.title}, first to ${tournament.rules.bestOf} matches`)
-
-let rampagePoints = 0
-let durianPoints = 0
-
-for (let i = 0; i < players.length; i++) {
-  const player = players[i]
-  console.log(player.name, player.wins)
-  if (player.teamName == 'Rambutan Rampage') {
-    rampagePoints += player.points
-  } else {
-    durianPoints += player.points
-  }
-}
-
-console.log('Daring Durians: '+ durianPoints)
-console.log('Rambutan Rampage: '+ rampagePoints)

@@ -6,32 +6,4 @@
   --color-georgie: #ff5789
 }
 
-body{
-  background-color: var(--page-bg);
-  color: var(--text);
-  font-family: Tahoma;
-}
-
-.centered{
-  text-align: center;
-}
-
-.versus{
-  margin: 1rem 0;
-}
-
-.team{
-  padding: .5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.daring-durians{
-  border: 6px double var(--color-thorsten);
-}
-
-.rambutan-rampage{
-  border: 6px double var(--color-georgie);
-}
+/* YOUR CODE HERE ⌨️ */
