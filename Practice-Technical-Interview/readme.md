@@ -1,7 +1,7 @@
 The Doubles Tournament
 ======================
 
-![doubles-mock](assets/doubles-mock.png)
+![doubles-mock](https://course.codeworksacademy.com/web-foundations/unit-02/pong-doubles.png)
 
 In this course you will be attempting to recreate the mock in the image above. The videos up to this point have taken a direct walkthrough approach, however in this challenge we are going to give you some instructions and tasks and let you see how far you can get. 
 
