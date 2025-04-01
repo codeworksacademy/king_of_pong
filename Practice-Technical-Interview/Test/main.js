@@ -182,7 +182,7 @@ let tests = [
     name: 'JS - Setting Variables',
     message: 'Log the variable points to the console',
     passed: false,
-    test(){
+    test() {
       this.passed = log.includes(11)
     }
   },
@@ -190,7 +190,7 @@ let tests = [
     name: 'JS - Incrementing a Variable',
     message: 'Modify the points variable and log it to the console.',
     passed: false,
-    test(){
+    test() {
       this.passed = log.includes(21)
     }
   },
@@ -198,8 +198,8 @@ let tests = [
     name: 'JS - Iterating through the numbers',
     message: 'Create a loop for all the numbers 1 - points',
     passed: false,
-    test(){
-      if(includesAll(log, [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21])){  
+    test() {
+      if (includesAll(log, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21])) {
       }
       this.passed = true
     }
@@ -208,8 +208,8 @@ let tests = [
     name: 'JS - Loop Modifications',
     message: 'Multiples of 4',
     passed: false,
-    test(){
-      if(!includesAll(log, ['swap server', 'swap server', 'swap server', 'swap server'])){
+    test() {
+      if (!includesAll(log, ['swap server', 'swap server', 'swap server', 'swap server'])) {
         throw new Error('On multiples of 4 you will swap the server. Look into the modulus operator...')
       }
       this.passed = true
@@ -219,8 +219,8 @@ let tests = [
     name: 'JS - The last number of the loop',
     message: 'Adding a message to the end of the loop',
     passed: false,
-    test(){
-        const found = log.find((i) => {
+    test() {
+      const found = log.find((i) => {
         return new RegExp(/good match/ig).test(i)
       })
       this.passed = found
@@ -230,9 +230,12 @@ let tests = [
     name: 'JS - Accessing Object Properties',
     message: 'Log and concatenate the tournament details',
     passed: false,
-    test(){
-      if(!log.includes('King Pong Equetorial Championship, first to 5 matches')){
-        throw new Error('The log must include the string: [King Pong Equetorial Championship, first to 5 matches] ')
+    test() {
+      let pass = log.includes('King Pong Equetorial Championship, first to 5 wins') ||
+        log.includes('King Pong Equetorial Championship, first to 5 wins.') ||
+        log.includes('King Pong Equetorial Championship first to 5 wins')
+      if (!pass) {
+        throw new Error('The log must include the string: [King Pong Equetorial Championship, first to 5 wins] ')
       }
       this.passed = true
     }
@@ -241,14 +244,14 @@ let tests = [
     name: 'JS - Iterating over an Array of Objects',
     message: 'Loop through each player in the `players` Array to log their `name` and `wins',
     passed: false,
-    test(){
-      if(!
-         includesAll(log,
-         ['Thorsten',3, 'Georgie',2, 'Sprinkles',4, 'Yubi',2]
-                    )
-        ){
+    test() {
+      if (!
+        includesAll(log,
+          ['Thorsten: 3', 'Georgie: 2', 'Sprinkles: 4', 'Yubi: 2']
+        )
+      ) {
         throw new Error('You need to log every player name and their wins')
-         }
+      }
       this.passed = true
     }
   },
@@ -256,11 +259,11 @@ let tests = [
     name: 'JS - Iterate and conditionally calculate',
     message: 'Calculate and Log the total of points for each team',
     passed: false,
-    test(){
-      if(!log.includes('Daring Durians: 11')){
+    test() {
+      if (!log.includes('Daring Durians: 11')) {
         throw new Error('The score for the Daring Durians has not been calculated')
       }
-      if(!log.includes('Rambutan Rampage: 9')){
+      if (!log.includes('Rambutan Rampage: 9')) {
         throw new Error('The score for the Rambutan Rampage has not been calculated')
       }
       this.passed = true
@@ -278,7 +281,7 @@ let stats = {
 }
 
 // easy everychecker
-function includesAll(arr, target){ 
+function includesAll(arr, target) {
   return target.every(v => arr.includes(v))
 }
 

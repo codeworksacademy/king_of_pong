@@ -17,12 +17,12 @@ Students will perform the following to demonstrate their knowledge of HTML/CSS a
   - Render to the page in the largest heading `Doubles Tournament`
   - Add an element with the id `teams` to the page.
     - Nested within the `teams` element you will add three additional elements *take these one at a time*.
-    - Add an element with the classes `team`, and `cameroon-challengers`
+    - Add an element with the classes `team`, and `daring-durians`
     - Add an element with the class `versus` and add the versus image to this element  
-    - Add an element with the classes `team`, and `rwanda-rampage`    
+    - Add an element with the classes `team`, and `rambutan-rampage`    
   - Inside of each of the team elements you will need to render the team name in *italics*
-  - Render an image element for `Thorsten` and `Yubi` from the images folder for team `CameraRoom Challengers`
-  - Render an image element for `Georgie` and `Sprinkles` from the images folder for team `Rwanda Rampage`
+  - Render an image element for `Thorsten` and `Yubi` from the images folder for team `Daring Durians`
+  - Render an image element for `Georgie` and `Sprinkles` from the images folder for team `Rambutan Rampage`
 2. **CSS - Styling the Page**
   - Apply the following styles
     - Change the page background to use the variable `--page-bg`
@@ -39,10 +39,10 @@ Students will perform the following to demonstrate their knowledge of HTML/CSS a
 4. **Creating and using Loops**
   - Loop through the numbers 1 to the value of `points`
   - Modify the loop to now include `'swap servers'` when the number is a multiple of `4` ( 🧩 use % )
-  - When the number reaches 21 log 'Good Match'
+  - When the number reaches 21 log `'Good Match'`
 5. **Accessing properties on an object**
   - Using the tournament Object, log `'<Name of tournament'>, first to <best of matches number> wins.` replacing the < > with the appropriate data
 6. **Working with an array of objects**
-  - Loop through each item in the `players` logging their `name` and `wins`
+  - Loop through each item in the `players` logging their `name` and `wins` in this format `name: wins`
   - Calculate and Log the total of points for each team with their name. The output must be logged to match the following format
     - `Team Name: 0`

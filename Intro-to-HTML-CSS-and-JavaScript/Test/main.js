@@ -21,7 +21,7 @@ let tests = [
     passed: false,
     test() {
       let card = document.querySelector('#thorsten')
-      const img = (/<img.*src="images\/ThorstenCard.png"/g).test(card?.innerHTML || '')
+      const img = (/<img.*src ?="images\/ThorstenCard.png"/g).test(card?.innerHTML || '')
       const name = (/<h2.*>.*(T|t)horsten.*<\/h2>/g).test(card?.innerHTML || '')
       const team = (/Cameroon Challengers/ig).test(card?.innerHTML || '')
       const stats = (/🏆\s*8\s*|\s*🏓\s*15/ig).test(card?.innerHTML || '')
@@ -29,6 +29,7 @@ let tests = [
       this.passed = img && name && team && stats && rarity
       if (this.passed) { return }
 
+      if (!card) throw new Error("Thorsten's card could not be found!")
       if (!img) throw new Error("The img is not correct. the src path may not be correct")
       if (!name) throw new Error("The name is not correct. Make sure it's in an h2 tag")
       if (!team) throw new Error("The team is not correct. It Should be 'Cameroon Challengers'")
@@ -44,7 +45,7 @@ let tests = [
       let card = document.querySelector('#georgie')
       if (!card) throw new Error("We are still missing the Georgie card, don't forget to give it the id of 'georgie'")
       if (!card.classList.contains('player-card')) throw new Error("Georgie's card is missing the class 'player-card'")
-      const img = (/<img.*src="images\/GeorgieCard.png"/g).test(card?.innerHTML || '')
+      const img = (/<img.*src= ?"images\/GeorgieCard.png"/g).test(card?.innerHTML || '')
       const name = (/<h2.*>.*(G|g)eorgie.*<\/h2>/g).test(card?.innerHTML || '')
       const team = (/Rwanda Rampage/ig).test(card?.innerHTML || '')
       const stats = (/🏆.*10.*|.*🏓.*20/ig).test(card?.innerHTML || '')
