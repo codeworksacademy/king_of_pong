@@ -1,0 +1,55 @@
+/* css variables */
+:root {
+  --dark: #140330;
+  --light: #e7e1a6;
+  --color-durians: #90ff74;
+  --color-rampage: #ff5789;
+}
+
+body {
+  background-color: rgba(130, 135, 185, 1);
+  background-image: linear-gradient(180deg, rgba(20, 3, 48, 1) 0%, rgba(3, 27, 48, 1) 20%, rgba(130, 135, 185, 1) 100%);
+  background-repeat: no-repeat;
+  color: var(--light);
+  font-family: Tahoma;
+}
+
+header {
+  text-align: center;
+}
+
+.court {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clickable:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all ease .2s;
+  filter: brightness(1.1);
+}
+
+.score-card {
+  color: var(--dark);
+  padding: .5em;
+  width: 40%;
+  border-radius: 10px;
+  background: var(--light);
+}
+
+.player {
+  display: block;
+}
+
+#table {
+  position: relative;
+  padding-top: 60px;
+}
+
+
+/* ⌨️ YOURE CODE HERE */
+
+/* Finish this rule */
+.scoreboard {}
