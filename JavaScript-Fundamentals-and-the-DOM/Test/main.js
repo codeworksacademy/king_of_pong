@@ -4,7 +4,7 @@ let tests = [
     message: 'Log team at index 0 vs team and index 2',
     passed: false,
     test() {
-      if ((/Burundi Bruisers/ig).test(logBlock)) throw new Error("Oops, we put the Burundi Bruisers in, they are not the right team.")
+      if ((/Banaza Bruisers/ig).test(logBlock)) throw new Error("Oops, we put the Banaza Bruisers in, they are not the right team.")
       if ((/daring|durings|rambutan|rampage/g).test(logBlock)) throw new Error("We have some of the names right, but it looks like they weren't accessed using the data in the array")
 
       if (

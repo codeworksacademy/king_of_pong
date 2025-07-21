@@ -1,4 +1,4 @@
-const teams = ['Daring Durians', 'Burundi Bruisers', 'Rambutan Rampage']
+const teams = ['Daring Durians', 'Banaza Bruisers', 'Rambutan Rampage']
 
 const tournament = {
   title: 'King Pong Equetorial Championship',
