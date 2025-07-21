@@ -121,7 +121,7 @@ let tests = [
     test() {
       let log = window.log.join('')
       if (!(/Lime Green/ig).test(log)) throw new Error("Have not logged Thorsten's team color. The way you are accessing properties on the object might not be right")
-      if (!(/thorsten.*Lime Green/ig).test(log)) {
+      if (!(/thorsten.*Lime Green|Lime Green.*thorsten/ig).test(log)) {
         throw new Error("The correct Color is logged, but not who it belongs to. try adding thorstens name along with the log so whe know who it belongs to")
       }
       this.passed = true
