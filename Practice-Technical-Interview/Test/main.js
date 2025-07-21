@@ -322,17 +322,22 @@ function expectLog(rgx, message) {
 
 // INTERCEPTOR
 window.log = []
+const queue = []
+let initialLoad = false
 let logBlock = '' // a join of the window log
-let fn = window.console.log
-window.console.log = function interceptor() {
+let fn = console.log
+console.log = function interceptor() {
   try {
-    fn(...arguments)
+    queue.push(arguments)
     window.log = [...window.log, ...arguments]
+    fn( ...arguments)
     logBlock = window.log.map(l => l === undefined ? 'undefined' : l).join(' ')
+
   } catch (e) {
     console.error(e)
   }
 }
+
 
 function evaluateLog(log, stats) {
   tests.forEach(t => {
@@ -369,6 +374,10 @@ async function runTests() {
 
   if (stats.passedTests == stats.totalTests) {
     console.log('✅', 'ALL TESTS PASSED!!!')
+  }
+    // CONSOLE LOGING THE QUEUE
+  if(queue.length){
+    queue.forEach(m => console.log(...m))
   }
 }
 
