@@ -5,7 +5,7 @@ let tests = [
     passed: false,
     test() {
       if ((/Burundi Bruisers/ig).test(logBlock)) throw new Error("Oops, we put the Burundi Bruisers in, they are not the right team.")
-      if ((/cammeroon|challengers|rwanda|rampage/g).test(logBlock)) throw new Error("We have some of the names right, but it looks like they weren't accessed using the data in the array")
+      if ((/daring|durings|rambutan|rampage/g).test(logBlock)) throw new Error("We have some of the names right, but it looks like they weren't accessed using the data in the array")
 
       if (
         !(/Daring Durians.*(vs|VS).*Rambutan Rampage/g).test(logBlock) &&
