@@ -49,45 +49,45 @@ let tests = [
       this.passed = true
     }
   },
-  // {
-  //   name: 'JS DOM interactions, updating collection value',
-  //   message: "Update the value of your collection on the DOM using JavaScript",
-  //   passed: false,
-  //   test() {
-  //     let elm = document.querySelector('#cards-value')
-  //     if (!elm) throw new Error("The id 'cards-value' is not present on the page, lets make sure it is on the <b> within the <h1>")
-  //     let newValue = elm.innerText
-  //     if (newValue == '$0.00') throw new Error("The inner text of the 'cards-value' element is still $0.00")
-  //     this.passed = true
-  //   },
-  //   watcher() {
-  //     watch('#cards-value', runTests)// run just this test? can it log only it's own results?
-  //   }
-  // },
-  // {
-  //   name: 'JS DOM interactions, updating Thorsten count',
-  //   message: "Add a function to increase the count of Thorsten's card when you click on it.",
-  //   passed: false,
-  //   test() {
-  //     let thorCountElm = document.querySelector('#thorsten-count')
-  //     if (!thorCountElm) throw new Error("Thorten's counter does not have the appropriate id yet")
-  //     if (thorCountElm.innerText <= 0) throw new Error("Thorsten's Count is set to 0 on the page, let's us JS to increase it when we click on him")
-  //     this.passed = true
-  //   },
-  //   watcher() { watch('#thorsten-count', runTests) }
-  // },
-  // {
-  //   name: 'JS DOM interactions, updating Georgie count',
-  //   message: "Add a function to increase the count of Georgie's card when you click on it.",
-  //   passed: false,
-  //   test() {
-  //     let georgCountElm = document.querySelector('#georgie-count')
-  //     if (!georgCountElm) throw new Error("Georgie's counter does not have the appropriate id yet")
-  //     if (georgCountElm.innerText <= 0) throw new Error("Georgie's Count is set to 0 on the page, let's use JS to increase it when we click on him")
-  //     this.passed = true
-  //   },
-  //   watcher() { watch('#georgie-count', runTests) }
-  // }
+  {
+    name: 'JS DOM interactions, updating collection value',
+    message: "Update the value of your collection on the DOM using JavaScript",
+    passed: false,
+    test() {
+      let elm = document.querySelector('#cards-value')
+      if (!elm) throw new Error("The id 'cards-value' is not present on the page, lets make sure it is on the <b> within the <h1>")
+      let newValue = elm.innerText
+      if (newValue == '$0.00') throw new Error("The inner text of the 'cards-value' element is still $0.00")
+      this.passed = true
+    },
+    watcher() {
+      watch('#cards-value', runTests)// run just this test? can it log only it's own results?
+    }
+  },
+  {
+    name: 'JS DOM interactions, updating Thorsten count',
+    message: "Add a function to increase the count of Thorsten's card when you click on it.",
+    passed: false,
+    test() {
+      let thorCountElm = document.querySelector('#thorsten-count')
+      if (!thorCountElm) throw new Error("Thorten's counter does not have the appropriate id yet")
+      if (thorCountElm.innerText <= 0) throw new Error("Thorsten's Count is set to 0 on the page, let's us JS to increase it when we click on him")
+      this.passed = true
+    },
+    watcher() { watch('#thorsten-count', runTests) }
+  },
+  {
+    name: 'JS DOM interactions, updating Georgie count',
+    message: "Add a function to increase the count of Georgie's card when you click on it.",
+    passed: false,
+    test() {
+      let georgCountElm = document.querySelector('#georgie-count')
+      if (!georgCountElm) throw new Error("Georgie's counter does not have the appropriate id yet")
+      if (georgCountElm.innerText <= 0) throw new Error("Georgie's Count is set to 0 on the page, let's use JS to increase it when we click on him")
+      this.passed = true
+    },
+    watcher() { watch('#georgie-count', runTests) }
+  }
 
 ]
 
@@ -120,7 +120,7 @@ function watch(target, test) {
   const config = { attributes: true, childList: true, subtree: true };
   let observer = new MutationObserver(test)
   let elm = document.querySelector(target)
-  if (!elm) throw new Error('[INVALID TARGET]', target)
+  if (!elm) { return }
   watchList.push(target)
   observer.observe(elm, config)
 }
