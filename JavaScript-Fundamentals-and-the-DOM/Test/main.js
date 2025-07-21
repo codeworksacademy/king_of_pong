@@ -22,8 +22,8 @@ let tests = [
     test() {
       expectLog(/King Pong Equetorial Championship/g, 'We did not include the title of the tournament')
       if ((/undefined/g).test(logBlock)) throw new Error("Whoops, we logged undefinded. Be careful, the amount and type exist in another object called prize")
-      expectLog(/1000000/g, "We did not include the amount of the prize")
-      expectLog(/coconuts/g, "We did not include the type of the prize")
+      expectLog(/1000000/g, "We did not include the amount of the prize, expected to see 1000000")
+      expectLog(/coconuts/g, "We did not include the type of the prize, expected to see coconuts")
 
       this.passed = true
     }
