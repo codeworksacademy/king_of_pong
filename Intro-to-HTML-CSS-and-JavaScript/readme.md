@@ -36,8 +36,8 @@ Good Luck!
 - Uncomment the `div`containing `img, h2, p` tags
 - Create another *player card* for "Georgie" following the format of Thorsten's card
   - the heading should have Georgie
-  - the img should link to Georegie's .png in the images folder
-  - Under the heading lets put Georgie's team name, the `Rwanda Rampage`
+  - the img should link to Georgie's .png in the images folder
+  - Under the heading lets put Georgie's team name, the `Rambutan Rampage`
   - for matches won 🏆 set `10` and for matches played 🏓 set it to `20`
   - the card should have a rarity ⭐ lets put `common`
   - don't forget to add the appropriate classes and id
@@ -55,17 +55,17 @@ Good Luck!
   - increase or dercrease the scores as needed to check your logic with the conditionals
 - Create A variable called `thorstenCard` and set it's value to an object with the properties of the card in our html
   - name : 'Thorsten'
-  - teamName: 'Cameroon Challengers'
+  - teamName: 'Daring Durians'
   - wins: 8
   - matches: 15
   - rarity: 'rare'
   - teamColor: 'Lime Green'
 - Do the same For Georgie's card, creating a new variable called `georgieCard`
   - name: 'Georgie'
-  - teamName: 'Rwanda Rampage'
+  - teamName: 'Rambutan Rampage'
   - wins: 10
   - matches: 20
   - rarity: 'common'
   - teamColor: 'Persimmon Pink'
 - Using the objects we just created, console log Thorsten's team color
-- Using the objects we juts created, console log Georgie's match average (wins divided by matches)
+- Using the objects we just created, console log Georgie's match average (wins divided by matches)

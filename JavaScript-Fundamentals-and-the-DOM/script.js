@@ -1,4 +1,4 @@
-const teams = ['Cameroon Challengers', 'Burundi Bruisers', 'Rwanda Rampage']
+const teams = ['Daring Durians', 'Burundi Bruisers', 'Rambutan Rampage']
 
 const tournament = {
   title: 'King Pong Equetorial Championship',
@@ -12,7 +12,7 @@ const tournament = {
 const cards = [
   {
     name: 'thorsten',
-    teamName: 'Cameroon Challengers',
+    teamName: 'Daring Durians',
     wins: 8,
     matches: 12,
     rarity: 'rare',
@@ -22,7 +22,7 @@ const cards = [
   },
   {
     name: 'georgie',
-    teamName: 'Rwanda Rampage',
+    teamName: 'Rambutan Rampage',
     wins: 10,
     matches: 20,
     rarity: 'common',

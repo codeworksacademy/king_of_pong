@@ -25,7 +25,7 @@ This time around most of the work we will do will be in the JavaScript so lets s
 ## Requirements
 
 ### JS Fundamentals
-- Using the array of team names, log `Cameroon Challengers vs Rwanda Rampage`
+- Using the array of team names, log `Daring Durians vs Rambutan Rampage`
 - Using the the Tournament object
   - log the title of the tournament
   - log the total prize of the tournament
@@ -42,7 +42,7 @@ This time around most of the work we will do will be in the JavaScript so lets s
   - add an onclick to our Thorsten card that calls this function
   - inject the count into `thorsten-count` element
 - Write a function that increases the count of Georgie cards
-  - add an onclick to our Gerorgie card that calls this function
+  - add an onclick to our Georgie card that calls this function
   - inject the count into `georgie-card` element
 - Write a function that re-calculates the total value of our collection
   - this draw the new total value to the `cards-value` element

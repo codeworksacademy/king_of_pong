@@ -21,9 +21,9 @@ let tests = [
     passed: false,
     test() {
       let card = document.querySelector('#thorsten')
-      const img = (/<img.*src ?="images\/ThorstenCard.png"/g).test(card?.innerHTML || '')
+      const img = (/<img.*src=".*images\/ThorstenCard.png"/g).test(card?.innerHTML || '')
       const name = (/<h2.*>.*(T|t)horsten.*<\/h2>/g).test(card?.innerHTML || '')
-      const team = (/Cameroon Challengers/ig).test(card?.innerHTML || '')
+      const team = (/Daring Durians/ig).test(card?.innerHTML || '')
       const stats = (/🏆\s*8\s*|\s*🏓\s*15/ig).test(card?.innerHTML || '')
       const rarity = (/⭐\s*rare/ig).test(card?.innerHTML || '')
       this.passed = img && name && team && stats && rarity
@@ -32,7 +32,7 @@ let tests = [
       if (!card) throw new Error("Thorsten's card could not be found!")
       if (!img) throw new Error("The img is not correct. the src path may not be correct")
       if (!name) throw new Error("The name is not correct. Make sure it's in an h2 tag")
-      if (!team) throw new Error("The team is not correct. It Should be 'Cameroon Challengers'")
+      if (!team) throw new Error("The team is not correct. It Should be 'Daring Durians'")
       if (!stats) throw new Error("The stats are not correct. Thorsten should have 🏆8 and 🏓15 with a '|' in the middle")
       if (!rarity) throw new Error("The rarity is not correct. it should be ⭐ rare")
     }
@@ -45,9 +45,9 @@ let tests = [
       let card = document.querySelector('#georgie')
       if (!card) throw new Error("We are still missing the Georgie card, don't forget to give it the id of 'georgie'")
       if (!card.classList.contains('player-card')) throw new Error("Georgie's card is missing the class 'player-card'")
-      const img = (/<img.*src= ?"images\/GeorgieCard.png"/g).test(card?.innerHTML || '')
+      const img = (/<img.*src=".*images\/GeorgieCard.png"/g).test(card?.innerHTML || '')
       const name = (/<h2.*>.*(G|g)eorgie.*<\/h2>/g).test(card?.innerHTML || '')
-      const team = (/Rwanda Rampage/ig).test(card?.innerHTML || '')
+      const team = (/Rambutan Rampage/ig).test(card?.innerHTML || '')
       const stats = (/🏆.*10.*|.*🏓.*20/ig).test(card?.innerHTML || '')
       const rarity = (/⭐.*common/ig).test(card?.innerHTML || '')
       this.passed = img && name && team && stats && rarity
@@ -55,7 +55,7 @@ let tests = [
 
       if (!img) throw new Error("The img is not correct. the src path may not be correct")
       if (!name) throw new Error("The name is not correct. Make sure it's in an h2 tag")
-      if (!team) throw new Error("The team is not correct. It Should be 'Rwanda Rampage'")
+      if (!team) throw new Error("The team is not correct. It Should be 'Rambutan Rampage'")
       if (!stats) throw new Error("The stats are not correct. Georgie should have 🏆10 and 🏓20 with a '|' in the middle")
       if (!rarity) throw new Error("The rarity is not correct. it should be ⭐ common")
     }

@@ -8,8 +8,8 @@ let tests = [
       if ((/cammeroon|challengers|rwanda|rampage/g).test(logBlock)) throw new Error("We have some of the names right, but it looks like they weren't accessed using the data in the array")
 
       if (
-        !(/Cameroon Challengers.*(vs|VS).*Rwanda Rampage/g).test(logBlock) &&
-        !(/Rwanda Rampage.*(vs|VS).*Cameroon Challengers/g)
+        !(/Daring Durians.*(vs|VS).*Rambutan Rampage/g).test(logBlock) &&
+        !(/Rambutan Rampage.*(vs|VS).*Daring Durians/g)
       ) throw new Error("We did not get the correct console log make sure to use [# of position] when accessing data in an array")
 
       this.passed = true
