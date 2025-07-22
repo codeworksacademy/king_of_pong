@@ -182,26 +182,6 @@ let tests = [
 
 // #region DONT_MODIFY
 
-
-let stats = {
-  failedTests: 0,
-  passedTests: 0,
-  totalTests: 0
-}
-
-// style Shortcut
-function style(elm) {
-  return getComputedStyle(elm)
-}
-
-function expectLog(rgx, message) {
-  if (!rgx.test(logBlock)) {
-    throw new Error(message)
-  }
-}
-
-
-// CLICKER
 function click(elm) {
   if (typeof elm == 'string') {
     elm = document.querySelector(elm)
@@ -215,11 +195,58 @@ function fail(message) {
   throw new Error(message)
 }
 
-// INTERCEPTOR
+let stats = {
+  failedTests: 0,
+  passedTests: 0,
+  totalTests: 0
+}
+
+// easy everychecker
+function includesAll(arr, target) {
+  return target.every(v => arr.includes(v))
+}
+
+// style Shortcut
+let styleSheet = null
+async function getStyleSheet() {
+  let res = await fetch('/style.css')
+  let raw = await res.text()
+  let arr = raw.split(/}\n|\/\n/g)
+  let css = arr.filter(l => l != '').map(l => l.trim())
+  styleSheet = {
+    root: '',
+    elements: [],
+    classes: [],
+    ids: []
+  }
+  css.forEach(style => {
+    if (style.startsWith(':root')) {
+      styleSheet.root = style
+    } else if (style.startsWith('.')) {
+      styleSheet.classes.push(style)
+    } else if (style.startsWith('#')) {
+      styleSheet.ids.push(style)
+    } else if (!style.startsWith('/')) {
+      styleSheet.elements.push(style)
+    }
+  })
+}
+function style(elm) {
+  return getComputedStyle(elm)
+}
+
+function expectLog(rgx, message) {
+  if (!rgx.test(logBlock)) {
+    throw new Error(message)
+  }
+}
+
 window.log = []
 const queue = []
 let initialLoad = false
-let logBlock = '' // a join of the window log
+let logBlock = window.log.map(l => l === undefined ? 'undefined' : l).join(' ') // a join of the window log
+// INTERCEPTOR
+function setupInterceptor(){
 let fn = console.log
 console.log = function interceptor() {
   try {
@@ -232,10 +259,11 @@ console.log = function interceptor() {
     console.error(e)
   }
 }
+}
 
-function evaluateLog(tests, log, stats) {
-  let failing = tests.filter(t => !t.passed)
-  failing.forEach(t => {
+
+function evaluateLog(log, stats) {
+  tests.forEach(t => {
     let comments = []
     try {
       t.passed = false
@@ -257,15 +285,16 @@ function evaluateLog(tests, log, stats) {
 
 }
 
-function runTests() {
+async function runTests() {
   stats = {
     failedTests: 0,
-    passedTests: tests.filter(t => t.passed).length,
+    passedTests: 0,
     totalTests: tests.length
   }
-  if (stats.passedTests == stats.totalTests) return // exit run early if all tests passed
+  setupInterceptor()
 
-  evaluateLog(tests, log, stats)
+  await getStyleSheet()
+  evaluateLog(window.log, stats)
   logTestStats(stats)
 
   if (stats.passedTests == stats.totalTests) {
@@ -279,6 +308,7 @@ function runTests() {
 
 async function start() {
   setTimeout(runTests, 500)
+
 }
 
 start()
@@ -293,9 +323,9 @@ function logWarn() { console.table('💭', ...arguments) }
 function logTestStats(stats) {
   console.table(
     '\n-------------------------------\n',
-    '🧪' + ':', stats.totalTests, '|',
-    '✅' + ':', stats.passedTests, '|',
-    '❌' + ':', stats.failedTests, '|')
+    '🧪', ':', stats.totalTests,
+    '✅', ':', stats.passedTests,
+    '❌', ':', stats.failedTests)
 }
 
 // #endregion
