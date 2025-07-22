@@ -200,8 +200,8 @@ let tests = [
     passed: false,
     test() {
       if (includesAll(log, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21])) {
+        this.passed = true
       }
-      this.passed = true
     }
   },
   {
@@ -209,7 +209,7 @@ let tests = [
     message: 'Multiples of 4',
     passed: false,
     test() {
-      if (!includesAll(log, ['swap server', 'swap server', 'swap server', 'swap server'])) {
+      if (!includesAll(log, ['swap servers', 'swap servers', 'swap servers', 'swap servers'])) {
         throw new Error('On multiples of 4 you will swap the server. Look into the modulus operator...')
       }
       this.passed = true
