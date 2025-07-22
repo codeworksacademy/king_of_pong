@@ -1,4 +1,4 @@
-let tests = [
+*let tests = [
   // HTML
   {
     name: 'HTML - The Doubles Heading',
@@ -68,10 +68,10 @@ let tests = [
       }
 
       const teamsElem = document.getElementById('teams')
-      const thorstenImg = teamsElem.querySelector('img[src="images/Thorsten.png"]')
-      const yubiImg = teamsElem.querySelector('img[src="images/Yubi.png"]')
-      const georgieImg = teamsElem.querySelector('img[src="images/Georgie.png"]')
-      const sprinklesImg = teamsElem.querySelector('img[src="images/Sprinkles.png"]')
+      const thorstenImg = teamsElem.querySelector('img[src*="images/Thorsten.png"]')
+      const yubiImg = teamsElem.querySelector('img[src*="images/Yubi.png"]')
+      const georgieImg = teamsElem.querySelector('img[src*="images/Georgie.png"]')
+      const sprinklesImg = teamsElem.querySelector('img[src*="images/Sprinkles.png"]')
 
       if (!thorstenImg) throw new Error('We are missing the element for Thorsten')
       if (!yubiImg) throw new Error('We are missing the element for Yubi')
