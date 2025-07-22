@@ -1,4 +1,4 @@
-*let tests = [
+let tests = [
   // HTML
   {
     name: 'HTML - The Doubles Heading',
