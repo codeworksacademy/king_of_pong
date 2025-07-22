@@ -1,10 +1,8 @@
 King of Pong
 =====================================
 
-<div align="center">
-<img src="https://codeworks.blob.core.windows.net/public/assets/img/free-course.png" height="90" />
-<img src="https://bcw.blob.core.windows.net/public/img/nav-logo.png" height="20" />
-</div>
+![free](https://codeworks.blob.core.windows.net/public/assets/img/free-course.png)
+
 
 Welcome to the King Pong Equatorial Championship. Fans from all around the globe are watching online to witness this major event. Before the match starts however there are some problems with the system used to track the points for the teams. That's where you come in!
 
@@ -70,3 +68,5 @@ Great Job! Now the tournament can begin. Feel free to add any additional functio
   - Alter our win condition to watch for the number of matches instead of the number of points.
 - Next Gen Graphics
   - Add some animations through CSS, so the players don't look so static.
+
+  ![kop](https://bcw.blob.core.windows.net/public/img/nav-logo.png)
